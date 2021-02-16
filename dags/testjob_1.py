@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
-
 import os
 import datetime as dt
 from datetime import timedelta
 
 from airflow import DAG
-from airflow.operators.bash import BashOperator
+from airflow.operators.bash_operator import BashOperator
 from airflow.utils.dates import days_ago
 
 
@@ -29,7 +28,7 @@ dag = DAG(
     schedule_interval= '*/1 * * * *'
 )
 
-command_1 = '/home/airflow/airflow-repository/TestJobs/SBT_MasterWorkspace/SBT_BI_Neven_Test_1/SBT_BI_Neven_Test_1_run.sh '
+command_1 = '/home/ec2-user/airflow-repository/Shells/SBT_BI_Neven_Test_1/SBT_BI_Neven_Test_1_run.sh '
 
 t0 = BashOperator(
     task_id='job1-rights',

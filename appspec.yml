@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-- source: /dags
+  - source: /dags
     destination: /home/ec2-user/airflow/dags
   - source: /Shells
     destination: /home/ec2-user/airflow-repository/Shells
