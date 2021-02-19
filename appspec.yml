@@ -2,8 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /dags
-    destination: /home/ec2-user/airflow/dags
-  - source: /Shells
-    destination: /home/ec2-user/airflow-repository/Shells
+    destination: /home/airflow/airflow/dags
   - source: /SQL_Scripts
-    destination: /home/ec2-user/airflow-repository/SQL_Scripts
+    destination: /home/airflow/airflow-repository/SQL_Scripts
+
