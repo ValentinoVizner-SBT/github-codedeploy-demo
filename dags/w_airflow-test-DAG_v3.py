@@ -29,10 +29,17 @@ dag = DAG(
     schedule_interval= '0 * * * *'
 )
 
-script = '/home/airflow/airflow-repository/SQL_Scripts/wTtest/test-dag-w-v1.py '
-
+script = '/home/airflow/airflow-repository/SQL_Scripts/wTest/test-dag-w-v1.py '
 t1 = BashOperator(
-    task_id='w-airflow-test-run-no-bash',
+    task_id='w-airflow-test-script-rights1',
+    bash_command='chmod +x ' + script,
+    dag=dag
+    )
+
+t2 = BashOperator(
+    task_id='w-airflow-test-run-script1',
     bash_command='python3 ' + script,
     dag=dag
     )
+
+t1 >> t2
