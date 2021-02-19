@@ -11,7 +11,7 @@ from airflow.utils.dates import days_ago
 
 
 default_args = {
-    'owner': 'valentino',
+    'owner': 'airflow',
     'depends_on_past': False,
     'start_date': dt.datetime(2021, 2, 19),
     'email': ['valentino.vizner@axilis.com'],
