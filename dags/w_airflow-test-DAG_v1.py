@@ -26,13 +26,20 @@ dag = DAG(
     'w-airflow-test-sample_v1',
     default_args=default_args,
     description='Simple insert into Vertica - sample test DAG.',
-    schedule_interval= '0 * * * *'
+    schedule_interval= '*/10 * * * *'
 )
 
-script = '/home/airflow/airflow-repository/SQL_Scripts/wTest/test-dag-w-v1.py '
-
+script = '/home/airflow/airflow-repository/SQL_Scripts/wTtest/test-dag-w-v1.py'
 t1 = BashOperator(
+    task_id='w-airflow-test-script-rights',
+    bash_command='chmod +x ' + script,
+    dag=dag
+    )
+
+t2 = BashOperator(
     task_id='w-airflow-test-run-script',
     bash_command='python3 ' + script,
     dag=dag
     )
+
+t1 >> t2
