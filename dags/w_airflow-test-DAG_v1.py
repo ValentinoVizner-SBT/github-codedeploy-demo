@@ -26,7 +26,7 @@ dag = DAG(
     'w-airflow-test-sample_v1',
     default_args=default_args,
     description='Simple insert into Vertica - sample test DAG.',
-    schedule_interval= '*/10 * * * *'
+    schedule_interval= '0 * * * *'
 )
 
 script = '/home/airflow/airflow-repository/SQL_Scripts/wTest/test-dag-w-v1.py '
