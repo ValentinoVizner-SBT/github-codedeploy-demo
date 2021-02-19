@@ -12,4 +12,4 @@ import sql_vertica
 from importlib import reload
 reload(sql_vertica)
 
-sql_vertica.run_script('w_test', 'w_sbx_de_insert_data.sql')
+sql_vertica.run_script('w-test', 'w_sbx_de_insert_data.sql')
