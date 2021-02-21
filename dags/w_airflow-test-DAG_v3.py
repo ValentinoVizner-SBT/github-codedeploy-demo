@@ -32,7 +32,7 @@ dag = DAG(
 script = '/home/airflow/airflow-repository/SQL_Scripts/wTest/test-dag-w-v1.py '
 
 t1 = BashOperator(
-    task_id='w-airflow-test-run-script1',
+    task_id='w-airflow-test-run-script-test-overwrite',
     bash_command='python3 ' + script,
     dag=dag
     )
