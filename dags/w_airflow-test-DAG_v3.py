@@ -25,7 +25,7 @@ default_args = {
 dag = DAG(
     'w-airflow-test-sample_v3',
     default_args=default_args,
-    description='Simple insert into Vertica - sample test DAG.',
+    description='Simple insert into Vertica - sample test DAG. Testing PR.',
     schedule_interval= '0 * * * *'
 )
 
