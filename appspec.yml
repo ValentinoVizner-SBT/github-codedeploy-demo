@@ -1,8 +1,11 @@
 version: 0.0
 os: linux
 files:
-  - source: /dags
-    destination: /home/airflow/airflow/dags
-  - source: /SQL_Scripts
-    destination: /home/airflow/airflow-repository/SQL_Scripts
+  - source: /shell_scripts
+    destination: /home/ec2-user/airflow-repository/shell_scripts
 
+    
+
+hooks:
+  AfterInstall:
+    - location: deploy_hooks/make_shells_executable.sh
