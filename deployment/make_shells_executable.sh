@@ -1,0 +1,1 @@
+find /home/airflow/airflow-repository/shell_scripts/ -type f -iname "*.sh" -exec chmod +x {} \;
