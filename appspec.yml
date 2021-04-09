@@ -1,11 +1,12 @@
+
 version: 0.0
 os: linux
 files:
-  - source: /shell_scripts
-    destination: /home/ec2-user/airflow-repository/shell_scripts
-
-    
+  - source: /dags
+    destination: /home/airflow/airflow/dags
+  - source: /jobs
+    destination: /home/airflow/airflow-repository/jobs
 
 hooks:
   AfterInstall:
-    - location: deploy_hooks/make_shells_executable.sh
+    - location: deployment/hooks/make_shells_executable.sh
